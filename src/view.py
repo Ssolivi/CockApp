@@ -2,13 +2,21 @@ from flask import Flask, render_template, request
 from transformers import BartTokenizer, BartForConditionalGeneration
 import torch
 import re
+import os
 
 app = Flask(__name__)
 
 # Load the pre-trained model
 tokenizer = BartTokenizer.from_pretrained('facebook/bart-large')
 model = BartForConditionalGeneration.from_pretrained('facebook/bart-large')
-model.load_state_dict(torch.load('bart_cocktail_model.pt', map_location=torch.device('cpu')))
+# 現在のスクリプトのディレクトリを取得
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# モデルファイルへのパスを構築（srcディレクトリの親ディレクトリを参照）
+model_path = os.path.join(os.path.dirname(current_dir), 'bart_cocktail_model.pt')
+
+# モデルを読み込む
+model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
 
 @app.route("/return", methods=["POST"])
 def move_BBBB():
