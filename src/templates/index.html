@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\static\css\style.css">
+    <title>カクテルレシピ生成アプリ</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">カクテルレシピ生成アプリ</h1>
+
+        <div class="body-block">
+          <form action="/predict" method="POST">
+            <label for="taste">味わい:</label><br>
+            <input type="text" id="taste" name="taste"><br>
+            <p></p>
+            <label for="alcohol_content">アルコール度数:</label><br>
+            <input type="text" id="alcohol_content" name="alcohol_content"><br>
+            <p></p>
+            <label for="alcohol_type">アルコール/ノンアルコール:</label><br>
+            <input type="text" id="alcohol_type" name="alcohol_type"><br>
+            <p></p>
+            <label for="base">ベース:</label><br>
+            <input type="text" id="base" name="base"><br>
+            <p></p>
+            <input type="submit" value="Predict">
+        </form>
+        </div>
+        
+    </div>
+</body>
+</html>

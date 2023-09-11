@@ -1,0 +1,43 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url('../img/home.jpg'); /* 背景画像のパスを指定してください */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.title {
+  position: relative;
+  bottom: 50px; /* タイトルの位置を微調整する場合はこの値を変更してください */
+  font-size: 2em;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.body-block {
+  width: 50%;  /* 画面の80%の幅に設定。必要に応じて調整してください。 */
+  max-width: 800px;  /* 最大幅を800pxに設定。オプションで、必要に応じて調整または削除してください。 */
+  height: auto;  /* 高さは内容に合わせて自動調整 */
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* 水平方向の中央揃え */
+  justify-content: center;  /* 垂直方向の中央揃え（必要な場合） */
+  text-align: center;  /* テキストを中央揃え */
+}
+

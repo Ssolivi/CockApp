@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\static\css\style.css">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <div class="container">
+        <div class="body-block">
+
+            <h1>レシピ結果</h1>
+            <p><strong>技法:</strong></p>
+                 {{ prediction["技法"] }}
+            <p><strong>材料:</strong></p>
+            <!-- <ul> -->
+                {% for ingredient, amount, unit in combined %}
+                    <li> {{ ingredient }}:{% if amount != "0" %}{{ amount }}{% endif %}{{ unit }}</li>
+                {% endfor %}
+            <!-- </ul> -->
+
+            <br>
+            <form action="/return" method="POST">
+                <input type="submit" value="ホームへ戻る">
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
+
