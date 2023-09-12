@@ -11,8 +11,10 @@ logging.basicConfig(level=logging.INFO)
 app = Flask(__name__)
 
 # Load the pre-trained model
-tokenizer = BartTokenizer.from_pretrained('facebook/bart-large')
-model = BartForConditionalGeneration.from_pretrained('facebook/bart-large')
+# tokenizer = BartTokenizer.from_pretrained('facebook/bart-large')
+# model = BartForConditionalGeneration.from_pretrained('facebook/bart-large')
+tokenizer = BartTokenizer.from_pretrained('facebook/bart-base')
+model = BartForConditionalGeneration.from_pretrained('facebook/bart-base')
 # 現在のスクリプトのディレクトリを取得
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
