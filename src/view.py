@@ -3,6 +3,10 @@ from transformers import BartTokenizer, BartForConditionalGeneration
 import torch
 import re
 import os
+import logging
+# ログの基本設定を行います。この例では、ログメッセージをコンソールに出力します。
+logging.basicConfig(level=logging.INFO)
+
 
 app = Flask(__name__)
 
@@ -100,7 +104,10 @@ def predict():
 
     # print("Combined data:", combined)
 
-
+    # parsed_data と combined 変数の内容をログに記録します。
+    logging.info("parsed_data: %s", parsed_data)
+    logging.info("combined: %s", combined)
+   
     # Return the parsed data as a response
     return render_template('result.html', prediction=parsed_data, combined=combined)
 
